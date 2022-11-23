@@ -1,0 +1,27 @@
+<%- include('../../shared/includes/head.ejs',{title: product.title})%>
+<link rel="stylesheet" href="/styles/singleProduct.css">
+<script src="/scripts/cart.logic.js" defer></script>
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+    <article>
+        <div class="upper-container">
+            <img src="<%=product.img%>" alt="<%=product.title%>">
+            <div class="data-container">
+                <h2> <%=product.title%></h2>
+                <p> $<%=product.price%></p>
+                <button id="addToCart" data-id="<%=product.id%>" data-csrf="<%=locals.csrfToken%>"  class="btn"> Add to Cart</button>
+            </div> 
+        </div>
+        <div class="lower-container">
+            <%=product.description%>
+        </div>
+    </article>
+    </main>
+
+</body>
+</html>

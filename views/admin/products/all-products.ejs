@@ -1,0 +1,28 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Manage Products'})%>
+<link rel="stylesheet" href="/styles/productPreview.css">
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <section>
+            <h1>Product administration</h1>
+            <h2>Manage Products</h2>
+            <a href="/admin/products/new" class="btn">Create New Product</a>   
+        </section>
+       <section>
+        <ul id="productList">
+            <% for (const product of products){%>
+                <li>
+                    <%-include('../../shared/includes/previewProduct.ejs',{product:product})%>
+                </li>
+                
+            <%}%>
+        </ul>
+       </section>    
+    </main>
+
+</body>
+</html>

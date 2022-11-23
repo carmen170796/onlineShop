@@ -1,0 +1,19 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Add Product'})%>
+<link rel="stylesheet" href="/styles/form.css">
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <h1>Add new product</h1>
+        <%-include('../includes/add-item-form',{submitPath:'/admin/products',product:{
+        title:'',
+        summary:'',
+        price:'',
+        description:''}, imageRequired:true})%>
+        
+    </main>
+</body>
+</html>

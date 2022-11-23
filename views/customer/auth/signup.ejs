@@ -1,0 +1,42 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Sign Up'})%>
+<link rel="stylesheet" href="/styles/form.css">
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <h1>Create New Account</h1>
+        <% if (inputData.errorMessage){%>
+            <div class="alert">
+                <h2>Ops, we have found an error</h2>
+                <p> <%=inputData.errorMessage%></p>
+            </div>>
+        <%}%>
+        <form action="/signup" method="POST" class="main-form">
+            <input type="hidden" name="_csrf" value="<%=locals.csrfToken%>" >
+            <label for="email">Email</label>
+            <input type="email" name="email" value="<%=inputData.email%>" required>
+            <label for="confirm-email"> Confirm Email</label>
+            <input type="email" name="confirm-email" value="<%=inputData.confirmEmail%>" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" value="<%=inputData.password%>" required>
+            <label for="name">Full Name</label>
+            <input type="text" name="name" value="<%=inputData.name%>" required>
+            <label for="street">Street</label>
+            <input type="text" name="street" value="<%=inputData.street%>" required>
+            <label for="postalCode">Postal Code</label>
+            <input type="number" name="postalCode" value="<%=inputData.postalCode%>" required>
+            <label for="city">City</label>
+            <input type="text" name="city" value="<%=inputData.city%>"  required>
+            <input type="submit" class="btn" value="Create an account" >
+            <a href="/login">Already have an account?</a>
+
+            
+        </form>
+    </main>
+
+</body>
+</html>
+

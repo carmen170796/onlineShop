@@ -1,0 +1,20 @@
+<%- include('../../shared/includes/head.ejs',{title: 'All of my orders'})%>
+<link rel="stylesheet" href="/styles/orderPreview.css">
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+      <h1>All my Orders</h1> 
+      <ul>
+        <%for (const order of orderList){%>
+            <li>
+                <%- include('../../shared/includes/previewOrder.ejs',{order:order})%>
+            </li>
+          <%}%>
+      </ul>
+      
+    </main>
+</body>
+</html>

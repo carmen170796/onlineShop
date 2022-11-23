@@ -1,0 +1,32 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Log in'})%>
+<link rel="stylesheet" href="/styles/form.css">
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <h1>Log in</h1>
+        <%if (inputData.errorMessage){%>
+            <div class="alert">
+                <h2>Ops, we have found an error</h2>
+                <p> <%=inputData.errorMessage%></p>
+            </div>
+        <%}%>
+        <form action="/login" method="POST" class="main-form">
+            <input type="hidden" name="_csrf" value="<%=locals.csrfToken%>" >
+            <label for="email">Email</label>
+            <input type="email" name="email" value="<%=inputData.email%>" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" value="<%=inputData.password%>" required>
+    
+            <button class="btn">Log in</button>
+            <a href="/signup">Create an account</a>
+
+            
+        </form>
+    </main>
+
+</body>
+</html>

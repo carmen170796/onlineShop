@@ -1,0 +1,23 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Home'})%>
+<link rel="stylesheet" href="/styles/productPreview.css">
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <h1>All products</h1>
+        <section>
+            <ul id="productList">
+                <% for (const product of products){%>
+                    <li>
+                        <%-include('../../shared/includes/previewProduct.ejs',{product:product})%>
+                    </li>     
+                <%}%>
+            </ul>
+        </section>    
+    </main>
+
+</body>
+</html>

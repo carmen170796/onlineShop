@@ -1,0 +1,26 @@
+.main-form{
+    width: 20rem;
+    margin: 0 auto;
+    background-color: var(--color--skyblue-200);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+label{
+    color: var(--color--blue--100);
+    display: block;
+    margin: 0.35rem 0;
+}
+
+input{
+    width: 80%;
+}
+
+.submit-btn{
+    background-color: var(--color--primary-400) ;
+    margin: 0.5rem 0;
+    font: inherit;
+    padding: 0.5rem 0.5rem;
+    color: var(--color--blue--100);
+}

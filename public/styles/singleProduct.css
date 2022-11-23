@@ -1,0 +1,31 @@
+article {
+  margin: 5rem auto;
+  max-width: 50rem;
+  
+}
+
+.upper-container{
+  background-color: var(--color--skyblue-200);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  border-radius: 6px;
+  gap: 1rem
+  
+}
+.upper-container img{
+   width: 50%;
+   height: 14rem;
+   border-radius: 10px;
+   object-fit: fill;
+}
+.data-container{
+  text-align: left;
+}
+
+.lower-container{
+  background-color: #bbbfcf;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-top: 0.5rem;
+}

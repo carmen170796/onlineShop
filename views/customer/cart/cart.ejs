@@ -1,0 +1,41 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Cart'})%>
+<link rel="stylesheet" href="/styles/cart.css">
+<script src="/scripts/update.logic.js" defer></script>
+
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <H1> Your Cart</H1>
+        <ul class='cart-list'>
+            <% const result=[...locals.cart.items]%>
+            <% const finalresult =result.filter(item=>item.finalPrice>0)%>
+            <% for (const item of finalresult) {%>
+                    <li >
+                        <div class="item-data">
+                            <h2><%=item.product.title%> </h3>
+                            <p> <SPAN class="item-total-price">$<%=item.finalPrice%></SPAN></p> <span>($<%=item.product.price%>)</span>
+                        </div>
+                        <form class="item-modification"  data-id="<%=item.product.id%>" data-csrf="<%=locals.csrfToken%>"> 
+                            <input type="number" value="<%=item.quantity%>" min="0" max="100">
+                            <button  class="btn" >Update</button>
+                        </form>
+            <%}%>
+        </ul>
+        <div class="final-details">
+            <p>Total: $ <span><%=locals.cart.totalAmount%></span></p>
+            <%if (locals.isAuth){%>
+                <form action="/orders" method="POST">
+                    <input type="hidden" name="_csrf" value="<%=locals.csrfToken%>" >
+                    <button class="btn">Buy Products</button>
+                </form>
+            <%} else{%>
+                <a href="/login" class="btn">Buy Products</a>
+                <%}%>
+        </div>
+    </main>
+</body>
+</html>

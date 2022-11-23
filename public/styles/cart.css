@@ -1,0 +1,35 @@
+.cart-list li{
+    background-color: var(--color--skyblue-200);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+.item-data p{
+    display: inline;
+}
+.item-data h2{
+    margin: 0 0 0.5rem 0;
+}
+
+.item-data span{
+    color: var(--color--blue-200);
+    font-style: italic;
+}
+
+.item-modification button{
+    display: inline;
+}
+
+
+.final-details{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.final-details button {
+    margin: 0;
+
+}

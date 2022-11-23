@@ -1,0 +1,22 @@
+<%- include('../../shared/includes/head.ejs',{title: 'Manage Orders'})%>
+<link rel="stylesheet" href="/styles/orderPreview.css">
+<script src="/scripts/updateOrder.logic.js" defer></script>
+
+</head>
+
+<body>
+    <%- include('../../shared/includes/header.ejs')%>
+    </header>
+    <main>
+        <h1>Manage Orders</h1>
+        <ul>
+            <% for (const order of orderList){%>
+                <li>
+                    <%- include('../../shared/includes/previewOrder.ejs',{order:order})%>
+                </li>
+            <%}%>
+        </ul>
+    </main>
+
+</body>
+</html>

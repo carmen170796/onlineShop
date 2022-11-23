@@ -1,0 +1,15 @@
+<article class="product-item">
+        <img src="<%=product.img%>" alt="<%= product.title %>" />
+        <div class="product-item-content">
+            <p> <%=product.title%></p>
+            <%if (locals.isAdmi){%>
+            <a href="products/<%=product.id%>" class="btn">View & Edit</a>
+            <form action="products/<%=product.id%>/delete" method="POST">
+                <input type="hidden" name="_csrf" value="<%=locals.csrfToken%>" >
+                <BUtton class="btn">Delete</BUtton>
+            </form>
+            <%}else {%>
+            <a href="products/<%=product.id%>" class="btn">View</a>
+            <%}%>
+        </div>
+</article>

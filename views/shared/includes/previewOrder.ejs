@@ -1,0 +1,32 @@
+<div class="order">
+    <header>
+        <h2><span class="order-price">$<%=order.productData.totalAmount%></span> - <%=order.modifiedDate%></h2>
+        <p class="badge"><%=order.status%></p>
+    </header>
+    <%if (locals.isAdmi){%>
+        <div class="user-details" >
+            <p class="order-price"> <%=order.userData.name%> </p>
+            <p> <%=order.userData.address.street%> (<%=order.userData.address.postalCode%> <%=order.userData.address.city%>)</p>
+        </div>
+        
+    <%}%>
+    <ul class="item-list">
+        <%for (const item of order.productData.items){%>
+           <li>
+            <%=item.product.title%> - $<%=item.finalPrice%> ($<%=item.product.price%> x <%=item.quantity%>) 
+           </li>
+        <%}%>
+    </ul> 
+    <%if (locals.isAdmi){%>
+        <form class="order-administration">
+            <input type="hidden" name="_csrf" value="<%=locals.csrfToken%>" >
+            <input type="hidden" name="id" value="<%=order.id%>" >
+            <select name="status">
+                <option value="fulfilled" <%if (order.status==="FULLFILLED"){%> selected <%}%> >Fulfilled</option>
+                <option value="pending" <%if (order.status==="PENDING"){%> selected <%}%> >Pending</option>
+                <option value="canceled" <%if (order.status==="CANCELED"){%> selected <%}%> >Canceled</option>
+            </select>
+            <button class="btn">Update</button>
+        </form>
+    <%}%>
+</div>

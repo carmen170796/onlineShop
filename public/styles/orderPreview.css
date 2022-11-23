@@ -1,0 +1,56 @@
+.order{
+    background-color: var(--color--skyblue-200);
+    text-align: left;
+    padding: 0.5rem;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+h2{
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.order-price{
+    color: var(--color--primary-400);
+}
+
+.badge{
+    padding: 0.05rem 0.25rem ;
+    margin-left: 0.5rem;
+    border: 1px solid var(--color--primary-400) ;
+    background-color: var(--color--primary-400);
+    color: var(--color--skyblue-100);
+    border-radius: 4px;
+}
+
+.item-list{
+    list-style: square;
+    padding-left: 2rem;
+    margin-bottom:0.5rem;
+}
+
+.user-details>p{
+    margin: 0.5rem;
+}
+
+form{
+    padding: 0mm;
+
+}
+select{
+    padding: 0.25rem;
+    border-radius: 4px;
+    background-color: var(--color--skyblue-100);
+}
+
+.btn{
+    color: var(--color--primary-400);
+    border-color:var(--color--primary-400) ;
+    background-color: transparent;
+    display: inline;
+}
